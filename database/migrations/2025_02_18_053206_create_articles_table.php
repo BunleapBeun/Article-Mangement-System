@@ -14,9 +14,8 @@ return new class extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('thumnail')->default('no_thumnail.jpg');
+            $table->string('thumbnail')->default('no_thumbnail.jpg');
             $table->string('short_desc');
-            $table->mediumText('desc');
             $table->timestamps();
             $table->unsignedSmallInteger('category_id');
             $table->unsignedBigInteger('poster_id');
