@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('thumbnail')->default('no_thumbnail.jpg');
             $table->string('short_desc');
+            $table->text('desc');
             $table->timestamps();
             $table->unsignedSmallInteger('category_id');
             $table->unsignedBigInteger('poster_id');
