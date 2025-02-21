@@ -12,12 +12,14 @@ class ArticleFactory extends Factory
         $ids = User::get(['id'])->pluck('id')->toArray();
 
         return [
-            'title' => fake()->sentence(4),
+            'title' => fake()->sentences(1, true),
             'thumbnail' => 'no_photo.jpg',
-            'short_desc' => fake()->sentence(10),
-            'desc' => fake()->paragraph(5),
-            'category_id' => fake()->randomElement([1, 2, 3]),
+            'short_desc' => fake()->sentences(2, true),
+            'desc' => fake()->paragraphs(4, true),
+            // 'category_id' => fake()->randomElement([1, 2, 3]),
+            'category_id' => fake()->numberBetween(1, 3),
             'poster_id' => fake()->randomElement($ids),
+            // 'poster_id' => fake()->numberBetween(1, 10),
         ];
     }
 }
